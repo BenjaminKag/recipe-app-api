@@ -2,7 +2,7 @@
 Tests for models.
 """
 from django.test import TestCase
-from django.contrib.auth import get_user_model # Helper function
+from django.contrib.auth import get_user_model  # Helper function
 
 
 class ModelTests(TestCase):
