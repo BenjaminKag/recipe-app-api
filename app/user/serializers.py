@@ -29,7 +29,7 @@ class UserSerializer(serializers.ModelSerializer):
     def update(self, instance, validated_data):
         """Update and return user."""
         password = validated_data.pop('password', None)
-        # Call the superclass method to handle other fields
+        # Call the superclass method to handle updating other fields
         user = super().update(instance, validated_data)
 
         if password:
