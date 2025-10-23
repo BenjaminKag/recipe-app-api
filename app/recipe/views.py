@@ -20,7 +20,8 @@ class RecipeViewSet(viewsets.ModelViewSet):
         """Return recipes for authenticated user."""
         return self.queryset.filter(user=self.request.user).order_by('-id')
 
-    # Overriding get_serializer_class to return different serializers based on action
+    # Overriding get_serializer_class to return
+    # different serializers based on action
     def get_serializer_class(self):
         """Return the serializer class for request."""
         if self.action == 'list':
@@ -28,7 +29,8 @@ class RecipeViewSet(viewsets.ModelViewSet):
 
         return self.serializer_class
 
-    # Overriding perform_create to associate the recipe with the authenticated user
+    # Overriding perform_create to associate
+    # the recipe with the authenticated user
     def perform_create(self, serializer):
         """Create a new recipe."""
         serializer.save(user=self.request.user)
